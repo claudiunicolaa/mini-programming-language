@@ -13,8 +13,8 @@
     * Special symbols:
         * operators     
             * relational: **=, <>, <, >, <]** (<=), **[>** (>=)
-            * aritmetici: **+,-,*,/, %,**
-            * logici: **#**(and), **##**(or)
+            * arithmetic: **+,-,*,/, %,**
+            * logical: **#**(and), **##**(or)
         * assigment: **<-**
         * separators: **(), [], begin, end, space, .**
         * reserved words: **if, else, for, while, const, int, program, begin, end, read, write, writeln, let, list_of_integer, list_of_string, func, call, and, or**
