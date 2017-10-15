@@ -48,8 +48,7 @@
     * syntax 
     
 ```pseudo
-    program = "PROGRAM", space, identifier, space, "BEGIN", space, listDeclaration, ";", instructions,
-                "END." ;
+    program = "PROGRAM", space, identifier, space, "BEGIN", space, listDeclaration, ";", instructions, "END." ;
 
     listDeclaration = declaration | declaration, ";", space, listDeclaration ;
 
