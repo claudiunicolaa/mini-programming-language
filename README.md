@@ -39,16 +39,41 @@
 
             string ::= '"', character, {character - '"'}, '"' ;
             ```
+        3. **boolean**
+            ```pseudo
+            boolean ::= "0" | "1" ; 
+            ```
 ### 2. Syntax
 * Rules
 ```pseudo
-    program ::= ("PROGRAM" | "program"), space, identifier, space,
-                ("BEGIN" | "begin"), space, 
-                declarationList, ";", instructions,
+    program ::= "PROGRAM", space, identifier, space,
+                "BEGIN", space, 
+                listDeclaration, ";", instructions,
                 "END." ;
-    declarationList :: = declaration | declaration, ";", space, declarationList ;
-    declaration ::= assignment, ";" ;
-                
+
+    listDeclaration :: = declaration | declaration, ";", space, listDeclaration ;
+
+    declaration ::= ("LET" | "let"), identifier, [space], assignment, [space], ":", [space], type ;
+
     assignment ::= identifier , [space], "<-", (integer | string) ; 
-    space ::= ? space character ?
+
+    type ::= "bool" | "int" | "string" ;
+
+    arrayDeclaration ::= "list_of_integer", "[", no., "]", [space], ":", [space], type;                
+    
+    instructions ::= "begin", (instruction | instruction, ";", space, instructions)  ,"end" ; 
+
+    instruction ::= simpleInstruction | complexInstruction ;
+
+    simpleInstruction ::= assignment | io ;
+
+    complexInstruction ::= instructions | ifInstruction | whileInstruction ; 
+
+    ifInstruction ::= "if", "(", condition, ")", "then", "begin", instruction, "end", ["else", "begin", instruction, "end"] ;
+
+    whileInstruction ::= "while", "(", condition, ")", "execute", "begin", instruction, "end" ;
+
+    io ::= ("read" | "write"), "(" indentifier ")" ;
+
+    space ::= ? space character ? ;
 ```    
