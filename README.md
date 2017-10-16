@@ -75,9 +75,9 @@
     
     assignment = identifier "<-" (integer | string | expresie) ;
 
-    expression = expression "+" term | term ; 
+    expression = expression ("+" | "-") term | term ; 
 
-    term = term "*" factor | factor ;
+    term = term ("*" | "/") factor | factor ;
 
     factor = "(" expression ")" | identifier | integer  ;
 
