@@ -14,7 +14,6 @@
         * operators     
             * relational: **=, <>, <, >, <]** (<=), **[>** (>=)
             * arithmetic: **+,-,*,/, %,**
-            * logical: **#**(and), **##**(or)
         * assigment: **<-**
         * separators: **(), [], begin, end, space, .**
         * reserved words: **if, else, for, while, const, int, program, begin, end, read, write, writeln, let, list_of_integer, list_of_string, func, call, and, or**
@@ -24,20 +23,22 @@
 
         letter = letter lower case | "A" | "B" | ... | "Z" ;
 
-        identifier = letter lower case , {letter lower case "_"} ;
+        identifier = letter lower case {letter lower case "_"} ;
         ```
     * Constants
         1. **integer**
             ```pseudo
-            digit = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+            zero  = "0" ;
+            
+            digit = "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
 
-            integer = ["-"], digit, {digit} ;
+            integer = ["-"] digit {zero | digit | zerozero} ;
             ```
         2. **string**
             ```pseudo
             character = "letter" | "digit" ; 
 
-            string = '"', character, {character - '"'}, '"' ;
+            string = '"' character {character - '"'} '"' ;
             ```
         3. **boolean**
             ```pseudo
@@ -48,17 +49,17 @@
     * syntax 
     
 ```pseudo
-    program = "PROGRAM", space, identifier, space, "BEGIN", space, listDeclaration, ";", instructions, "END." ;
+    program = "PROGRAM" identifier "BEGIN" listDeclaration ";" instructions "END." ;
 
-    listDeclaration = declaration | declaration, ";", space, listDeclaration ;
+    listDeclaration = declaration | declaration";" listDeclaration ;
 
-    declaration = "let", identifier, [space], assignment, [space], ":", [space], type ;
+    declaration = "let" identifier assignment ":" type ;
 
     type = "bool" | "int" | "string" ;
 
-    arrayDeclaration = ("list_of_integer" | "list_of_string"), "[", no., "]", [space], ":", [space], type;                
+    arrayDeclaration = "list" "[", no., "]" identifier ":" type;              
     
-    instructions = (instruction | instruction, ";", space, instructions) ; 
+    instructions = instruction | instruction ";" instructions ; 
 
     instruction = simpleInstruction | complexInstruction ;
 
@@ -66,29 +67,27 @@
 
     complexInstruction = instructions | ifInstruction | whileInstruction ; 
 
-    ifInstruction = "if", "(", condition, ")", "then", "begin", instruction, "end", ["else", "begin", instruction, "end"] ;
+    ifInstruction = "if" "(" condition ")" "then" "begin" instruction "end"  ["else" "begin" instruction "end"] ;
 
-    whileInstruction = "while", "(", condition, ")", "execute", "begin", instruction, "end" ;
+    whileInstruction = "while" "(" condition ")" "execute" "begin" instruction "end" ;
 
-    io = ("read" | "write"), "(", indentifier, ")" ;
+    io = ("read" "(" indentifier ")" | "write") "(" (indentifier| string) ")" ;
+    
+    assignment = identifier "<-" (integer | string | expresie) ;
 
-    assignment = identifier , [space], "<-", (integer | string | expresie) ;
+    expression = expression "+" term | term ; 
 
-    expression = expression, "+", term | term ; 
+    term = term "*" factor | factor ;
 
-    term = term, "*", factor | factor ;
+    factor = "(" expression ")" | identifier | integer  ;
 
-    factor = "(", expression, ")" | identifier  ;
-
-    condition = expression, relation, expression ;
-
-    space = ? space character ? ;
+    condition = expression relation expression ;
 ``` 
 
 * lexical
 
 ```pseudo
-    identifier = letter lower case | letter lower case, {letter lower case}, {digit} ;
+    identifier = letter lower case | letter lower case {letter lower case} {digit};
     letter lower case = "a" | "b" | ... | "z" ;
     digit =  "0" | "1" | ... | "9" ;
     relation =  "<>" | "<" | "<]" | "=" | "[>" | ">" ;
@@ -99,13 +98,13 @@ The tokens are codified according to the following 2 tables:
 ### Indentifiers
 | Token type       | Code  |  
 |------------------|-------|
-|  identifer       | 0     |
-|  program         | 1     |
-|  begin           | 2     |
-|  end             | 3     |
-|  let             | 4     |
-|  list_of_integer | 5     |
-|  list_of_string  | 6     |
+|  indentifiers    | 0     |
+|  constants       | 1     |
+|  program         | 2     |
+|  begin           | 3     |
+|  end             | 4     |
+|  let             | 5     |
+|  list            | 6     |
 |  if              | 7     |
 |  then            | 8     |
 |  else            | 9     |
@@ -113,15 +112,15 @@ The tokens are codified according to the following 2 tables:
 |  execute         | 11    |
 |  read            | 12    |
 |  write           | 13    |
-|  and             | 14    |
-|  or              | 15    |
-|  <-              | 16    |
-|  :               | 17    |
-|  ;               | 18    |
-|  ,               | 19    |
-|  .               | 20    |
-|  +               | 21    |
-|  *               | 22    |
+|  <-              | 14    |
+|  :               | 15    |
+|  ;               | 16    |
+|  ,               | 17    |
+|  .               | 18    |
+|  +               | 19    |
+|  -               | 20    |
+|  *               | 21    |
+|  /               | 22    |
 |  (               | 23    |
 |  )               | 24    |
 |  [               | 25    |
@@ -130,11 +129,3 @@ The tokens are codified according to the following 2 tables:
 |  <>              | 28    |
 |  <               | 29    |
 |  >               | 30    |
-
-
-### Constants
-| Token type | Code  |  
-|------------|-------|
-|  bool      | 0     |
-|  int       | 1     |
-|  string    | 2     |
