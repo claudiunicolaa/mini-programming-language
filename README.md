@@ -71,7 +71,7 @@
 
     whileInstruction = "while" "(" condition ")" "execute" "begin" instruction "end" ;
 
-    io = ("read" "(" indentifier ")" | "write") "(" (indentifier| string) ")" ;
+    io = ("read" "(" indentifier ")" | "write") "(" (indentifier | string) ")" ;
     
     assignment = identifier "<-" (integer | string | expresie) ;
 
