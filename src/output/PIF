@@ -1,0 +1,227 @@
+Array
+(
+    [0] => Atom Object
+        (
+            [name:Atom:private] => PROGRAM
+            [code:Atom:private] => 2
+            [position:Atom:private] => -1
+        )
+
+    [1] => Atom Object
+        (
+            [name:Atom:private] => suma
+            [code:Atom:private] => 0
+            [position:Atom:private] => 0
+        )
+
+    [2] => Atom Object
+        (
+            [name:Atom:private] => BEGIN
+            [code:Atom:private] => 3
+            [position:Atom:private] => -1
+        )
+
+    [3] => Atom Object
+        (
+            [name:Atom:private] => let
+            [code:Atom:private] => 5
+            [position:Atom:private] => -1
+        )
+
+    [4] => Atom Object
+        (
+            [name:Atom:private] => a
+            [code:Atom:private] => 0
+            [position:Atom:private] => 1
+        )
+
+    [5] => Atom Object
+        (
+            [name:Atom:private] => :
+            [code:Atom:private] => 15
+            [position:Atom:private] => -1
+        )
+
+    [6] => Atom Object
+        (
+            [name:Atom:private] => int
+            [code:Atom:private] => 27
+            [position:Atom:private] => -1
+        )
+
+    [7] => Atom Object
+        (
+            [name:Atom:private] => let
+            [code:Atom:private] => 5
+            [position:Atom:private] => -1
+        )
+
+    [8] => Atom Object
+        (
+            [name:Atom:private] => b
+            [code:Atom:private] => 0
+            [position:Atom:private] => 2
+        )
+
+    [9] => Atom Object
+        (
+            [name:Atom:private] => :
+            [code:Atom:private] => 15
+            [position:Atom:private] => -1
+        )
+
+    [10] => Atom Object
+        (
+            [name:Atom:private] => int
+            [code:Atom:private] => 27
+            [position:Atom:private] => -1
+        )
+
+    [11] => Atom Object
+        (
+            [name:Atom:private] => let
+            [code:Atom:private] => 5
+            [position:Atom:private] => -1
+        )
+
+    [12] => Atom Object
+        (
+            [name:Atom:private] => sum
+            [code:Atom:private] => 0
+            [position:Atom:private] => 3
+        )
+
+    [13] => Atom Object
+        (
+            [name:Atom:private] => :
+            [code:Atom:private] => 15
+            [position:Atom:private] => -1
+        )
+
+    [14] => Atom Object
+        (
+            [name:Atom:private] => int
+            [code:Atom:private] => 27
+            [position:Atom:private] => -1
+        )
+
+    [15] => Atom Object
+        (
+            [name:Atom:private] => read
+            [code:Atom:private] => 12
+            [position:Atom:private] => -1
+        )
+
+    [16] => Atom Object
+        (
+            [name:Atom:private] => (
+            [code:Atom:private] => 23
+            [position:Atom:private] => -1
+        )
+
+    [17] => Atom Object
+        (
+            [name:Atom:private] => a
+            [code:Atom:private] => 0
+            [position:Atom:private] => 1
+        )
+
+    [18] => Atom Object
+        (
+            [name:Atom:private] => )
+            [code:Atom:private] => 24
+            [position:Atom:private] => -1
+        )
+
+    [19] => Atom Object
+        (
+            [name:Atom:private] => b
+            [code:Atom:private] => 0
+            [position:Atom:private] => 2
+        )
+
+    [20] => Atom Object
+        (
+            [name:Atom:private] => <-
+            [code:Atom:private] => 14
+            [position:Atom:private] => -1
+        )
+
+    [21] => Atom Object
+        (
+            [name:Atom:private] => 11
+            [code:Atom:private] => 1
+            [position:Atom:private] => 4
+        )
+
+    [22] => Atom Object
+        (
+            [name:Atom:private] => sum
+            [code:Atom:private] => 0
+            [position:Atom:private] => 3
+        )
+
+    [23] => Atom Object
+        (
+            [name:Atom:private] => <-
+            [code:Atom:private] => 14
+            [position:Atom:private] => -1
+        )
+
+    [24] => Atom Object
+        (
+            [name:Atom:private] => a
+            [code:Atom:private] => 0
+            [position:Atom:private] => 1
+        )
+
+    [25] => Atom Object
+        (
+            [name:Atom:private] => +
+            [code:Atom:private] => 19
+            [position:Atom:private] => -1
+        )
+
+    [26] => Atom Object
+        (
+            [name:Atom:private] => b
+            [code:Atom:private] => 0
+            [position:Atom:private] => 2
+        )
+
+    [27] => Atom Object
+        (
+            [name:Atom:private] => write
+            [code:Atom:private] => 13
+            [position:Atom:private] => -1
+        )
+
+    [28] => Atom Object
+        (
+            [name:Atom:private] => (
+            [code:Atom:private] => 23
+            [position:Atom:private] => -1
+        )
+
+    [29] => Atom Object
+        (
+            [name:Atom:private] => sum
+            [code:Atom:private] => 0
+            [position:Atom:private] => 3
+        )
+
+    [30] => Atom Object
+        (
+            [name:Atom:private] => )
+            [code:Atom:private] => 24
+            [position:Atom:private] => -1
+        )
+
+    [31] => Atom Object
+        (
+            [name:Atom:private] => END.
+            [code:Atom:private] => 4
+            [position:Atom:private] => -1
+        )
+
+)
