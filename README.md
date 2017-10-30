@@ -129,3 +129,33 @@ The tokens are codified according to the following 2 tables:
 |  <>              | 28    |
 |  <               | 29    |
 |  >               | 30    |
+
+## Scanner Documentation
+
+Reserved words, operators and separators are stored in a HashTable chaining with simpled linked list, using the hash function: 
+```
+chars <- split key(string) in chars
+sum   <- 0;
+foreach (chars as char) {
+    sum <- sum + ord($char);
+}
+
+return sum mod size of HashTable
+```
+
+The scanner has two levels of verifications:
+
+- **level one**: it's checking if the token is a reserved word, an operator or a separator. If one of this conditions is true, a new entry on Program Internal Form it's added ***(name, code, position in symbol table=-1)***
+
+
+- **level two**: it's checking using a regular expression if the tokens is an identifier or a constant. If one of this conditions is true, a new entry on Program Internal Form it's added ***(name, code, position in symbol table)*** 
+
+```
+identifier regex: (\b(([a-z]+_*)|([a-z_]+))\b) 
+
+
+constant regex: (((\s|^)([+-]?[1-9]+[0-9]*))|((\s|^)([+-]?[0-9]+\.[0-9]+[1-9]))|((?<=").*(?="))|((\s|^)0))
+```
+
+The Symbol and Program Internal Form table are separated, each of them has there data structure assigned.
+

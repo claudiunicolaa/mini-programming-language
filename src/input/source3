@@ -1,0 +1,7 @@
+PROGRAM eroare
+BEGIN
+    let variabilaMare : int
+
+    read (variabilaMare)
+    write ( variabilaMare )
+END.

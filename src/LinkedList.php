@@ -3,13 +3,28 @@ require "Node.php";
 
 class LinkedList implements Iterator
 {
+    /**
+     * @var null| \Node
+     */
     private $firstNode = null;
-    private $current   = null;
-    private $position  = 0;
-    private $count     = 0;
+    /**
+     * @var null| \Node
+     */
+    private $current = null;
+    /**
+     * @var int
+     */
+    private $position = 0;
+    /**
+     * @var int
+     */
+    private $count = 0;
 
     /**
      * Insert node at the beginning of the list.
+     *
+     * @param null|a $data
+     * @return bool
      */
     public function insertFirst($data = null)
     {

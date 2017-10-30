@@ -1,7 +1,7 @@
 PROGRAM suma
 BEGIN
-    let a : int
-    let b : int
+    let ab : int
+    let ba : int
     let sum : int
 
     read ( a )

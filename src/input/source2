@@ -1,0 +1,21 @@
+PROGRAM doi
+BEGIN
+    let primul_string : string
+    let al_doilea_string : string
+    let rezultat : string
+    let comp : int
+
+
+    rezultat <- "Simplu"
+    primul_string <- "Hello,"
+    al_doilea_string <- "World!"
+
+
+
+    if ( comp < 10 ) then
+    BEGIN
+        rezultat <- primul_string + al_doilea_string
+    END.
+
+    write (rezultat)
+END.

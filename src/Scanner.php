@@ -1,6 +1,6 @@
 <?php
 
-class Analizer
+class Scanner
 {
     const SYMBOLS = __DIR__ . '/input/symbols';
     const RESERVED_WORDS_ = __DIR__ . '/input/reserved_words';
@@ -37,7 +37,7 @@ class Analizer
     private $separators;
 
     /**
-     * Analizer constructor.
+     * Scanner constructor.
      */
     public function __construct()
     {
@@ -46,7 +46,7 @@ class Analizer
         $this->separators    = Loader::populate(IO::read(static::SEPARATORS));
     }
 
-    public function analize(array $source): void
+    public function analyze(array $source): void
     {
         $index = 0;
         while ($index < count($source)) {
@@ -131,7 +131,7 @@ class Analizer
 
     private function isIdentifier(string $atom): bool
     {
-        $rule = "([a-z]+_*)";
+        $rule = "(\b(([a-z]+_*)|([a-z_]+))\b)";
 
         return (bool)preg_match($rule, $atom);
     }
